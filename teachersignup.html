@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url(signupbg2.png) 1%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#howtouse"><li>How to use</li></a>
+            </ul>
+            <h3>Online Attendance System</h3>
+            <ul>
+                <a href="teachersignup.html"><li>Teacher Signup</li></a>
+                <a href="studentsigup.html"><li>Student Signup</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="heading">
+            <h1>DBATU Attendance Tracker System</h1>
+        </section>
+        <section class="bothlogins">
+            <div class="logins">
+                <div class="teacher">
+                    <header class="signupteacher">
+                        <h1>Signup</h1>
+                    </header>
+                    <main class="signupteacherbody">
+                        <form name="tsignupform" action="#" onsubmit="return tcheckEmpty()" method="post" autocomplete="off" id="signup">
+                            <p>
+                                <label for="teaname">Teacher Name</label>
+                                <input type="text" id="teaname" placeholder="Teacher Name" name="teaname" required>
+                            </p>
+                            <p>
+                                <label for="ttitle">Title</label>
+                                <input type="text" id="ttitle" placeholder="Teacher" disabled name="ttitle" value="Teacher">
+                            </p>
+                            <p>
+                                <label for="temail">Email</label>
+                                <input type="email" id="temail" placeholder="You Email" name="temail" required>
+                            </p>
+                            <p>    
+                                <label for="tpassword">Set password</label>
+                                <input type="password" id="tpassword" placeholder="minimum 8 characters" name="tpassword" required>
+                            </p>
+                            <p id="iagree">
+                                <input type="checkbox" id="agree-to-terms" required>
+                                <label for="agree-to-terms">I agree</label>
+                            </p>
+                            <input type="submit" id="submit" value="Create Account">
+                        </form>
+                        <img src="teacherteaching.png" alt="teacher-teaching" class="teacher-teaching-img">
+                    </main>
+                    <footer class="signupteacherfooter">
+                        <p>Already have an account? <a href="teacherlogin.html">Login</a></p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="index.js"></script>
+</body>
+</html>

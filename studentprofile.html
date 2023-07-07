@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student profile</title>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+		<header>
+			<nav>
+				<ul>
+					<a href="index.html"><li>Home</li></a>
+				</ul>
+				<h3>Online Attendance System</h3>
+				<!-- <ul>
+					<a href="teachersignup.html"><li>Teacher Signup</li></a>
+					<a href="studentsigup.html"><li>Student Signup</li></a>
+				</ul> -->
+				<ul>
+					<a href="studentlogin.html"><li>Logout</li></a>
+				</ul>
+			</nav>
+		</header>
+		<h1 id="welcomestudent">
+			Welcome, see your Attendance Data here: 
+		</h1>
+		<hr id="stuprohr">
+        <div class="enterprn">
+			<label for="stuproprn">Enter Your PRN:</label>
+			<input type="number" name="stuprn" id="stuproprn" placeholder="Student PRN" required>
+			<button type="submit" id="studatabtn" onclick="showstudata()">Show Data</button>
+			<button type="submit" id="refreshbtnstupro" onclick="refreshbtnstupro()">Refresh</button>
+		</div>
+		<hr id="stuprohr">
+		<table style="border: 2px solid black;" id="studenttables">
+			<tr class="name" style="border: px solid black;">
+				<td style="font-weight: bold; border: 1px solid black;">Name</td>
+			</tr>
+			<tr class="prn" style="border: 2px solid black;">
+				<td style="font-weight: bold; border: 1px solid black;">PRN</td>
+			</tr>
+			<tr class="email" style="border: 2px solid black;">
+				<td style="font-weight: bold; border: 1px solid black;">Email</td>
+			</tr>
+			<tr class="password" style="border: 2px solid black;">
+				<td style="font-weight: bold; border: 1px solid black;">Password</td>
+			</tr>
+		</table>
+		<table style="border: 2px solid black;" id="studenttables">
+			<thead>
+				<tr class="stableHead" style="border: 2px solid black;">
+					<th>Name</th>
+					<th>PRN</th>
+				</tr>
+			</thead>
+			<tbody class="stableBody">
+				<!-- <td></td>
+					<td></td>
+					<td></td> -->
+			</tbody>
+		</table>
+		<script src="index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url(signupbg2.png) 1%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#howtouse"><li>How to use</li></a>
+            </ul>
+            <h3>Online Attendance System</h3>
+            <ul>
+                <a href="teachersignup.html"><li>Teacher Signup</li></a>
+                <a href="studentsigup.html"><li>Student Signup</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="heading">
+            <h1>DBATU Attendance Tracker System</h1>
+        </section>
+        <section class="bothlogins">
+            <div class="logins">
+                <div class="teacher">
+                    <header class="signupteacher">
+                        <h1>Login</h1>
+                    </header>
+                    <main class="signupteacherbody">
+                        <form name = "tloginform" method="post" action="teacherprofile.html" id="login" onsubmit="return tloginUser()" autocomplete="off">
+                            <p>
+                                <label for="ttitle">Title</label>
+                                <input type="text" id="ttitle" placeholder="Student" disabled name="ttitle" value="Teacher">
+                            </p>
+                            <p>
+                                <label for="temail">Email</label>
+                                <input type="email" id="temail" placeholder="Teacher Email" name="temail" required>
+                            </p>
+                            <p>    
+                                <label for="tpassword">Password</label>
+                                <input type="password" id="tpassword" placeholder="Your Password" name="tpassword" required>
+                            </p>
+                            <input type="submit" id="submit" value="Login">
+                            <p id="forgetpwd">
+                                <a href="#">Forgot Password?</a>
+                            </p>
+                        </form>
+                        <img src="teacherteaching.png" alt="teacher-teaching" class="teacher-teaching-img">
+                    </main>
+                    <footer class="signupteacherfooter">
+                        <p>Don't have an account? <a href="teachersignup.html">Signup</a></p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

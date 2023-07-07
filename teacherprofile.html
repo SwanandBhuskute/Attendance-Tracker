@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Attendance</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <a href="index.html"><li>Home</li></a>
+        </ul>
+        <h3>Online Attendance System</h3>
+        <!-- <ul>
+                <a href="teachersignup.html"><li>Teacher Signup</li></a>
+                <a href="studentsigup.html"><li>Student Signup</li></a>
+            </ul> -->
+        <ul>
+          <a href="teacherlogin.html"><li>Logout</li></a>
+        </ul>
+      </nav>
+    </header>
+    <h1 id="welcometeacher">
+      Welcome, see the students' Attendance Data here:
+    </h1>
+    <hr id="teaprohr" />
+    <div class="buttons">
+      <button type="submit" id="refreshbtnteapro" onclick="refreshbtnteapro()">
+        Refresh
+      </button>
+      <button type="submit" id="showdata" onclick="showdata()">
+        Show Data
+      </button>
+      <button type="submit" id="addstudent" onclick="addstudent()">
+        Add Student
+      </button>
+      <button type="submit" id="updatedata" onclick="updatedata()">
+        Update Data
+      </button>
+      <button type="submit" id="sendmails" onclick="sendMails()">
+        Send Mails
+      </button>
+      <button type="submit" id="saveSheet" onclick="saveSheet()">
+        Save Sheet
+      </button>
+    </div>
+
+    <table class="tableteachershowdata">
+      <thead id="tableHead">
+        <th>Sr No.</th>
+        <th>Name</th>
+        <th>PRN</th>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date1"
+            id="date1"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date2"
+            id="date2"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date3"
+            id="date3"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date4"
+            id="date4"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date5"
+            id="date5"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date6"
+            id="date6"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date7"
+            id="date7"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <td style="border: 1px solid black">
+          <input
+            type="date"
+            name="date8"
+            id="date8"
+            style="width: 105px; padding: 3px; border: 1px solid black"
+          />
+        </td>
+        <!-- <td style="border: 1px solid black;"><input type="date" name="date9" id="date9" style="width: 105px; padding: 3px; border: 1px solid black;"></td> -->
+        <!-- <td style="border: 1px solid black;"><input type="date" name="date10" id="date10" style="width: 105px; padding: 3px; border: 1px solid black;"></td> -->
+        <td style="border: 1px solid black">
+          <button type="submit" id="savedates" onclick="saveDates()">
+            Save
+          </button>
+        </td>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendMails() {
+        var Students = JSON.parse(localStorage.getItem("Students"));
+        var PRNs = JSON.parse(localStorage.getItem("PRNs"));
+        var SEmails = JSON.parse(localStorage.getItem("SEmails"));
+        // var SPasswords = JSON.parse(localStorage.getItem('SPasswords'))
+        var dates = JSON.parse(localStorage.getItem("dates"));
+        var AttendancePerc = JSON.parse(localStorage.getItem("AttendancePerc"));
+
+        for (let i = 0; i < Students.length; i++) {
+          var name = Students[i];
+          var prn = PRNs[i];
+          var email = SEmails[i];
+          // var password = SPasswords[i]
+          var stuattended = `dates${Students[i]}`;
+
+          var body =
+            "Dear" +
+            name +
+            ", <br/><br/>This is your current attendance data.<br/><br/>" +
+            "Name: " +
+            name +
+            "<br/>PRN: " +
+            prn +
+            "<br/>Email: " +
+            email +
+            "<br/>Lecture Dates: " +
+            dates +
+            "<br/>Your attendance: " +
+            stuattended +
+            "<br/>Your Percentage: " +
+            AttendancePerc[i];
+
+          console.log(SEmails[i]);
+          Email.send({
+            Host: "smtp.elasticemail.com",
+            Username: "swanandtest85@gmail.com",
+            Password: "8B0FD60FCD129574CCC86E79942FAFD4785D",
+            To: SEmails[i],
+            From: "UNIVERSITY ATTENDANCE Data swanandtest85@gmail.com",
+            Subject: "Attendance Data",
+            Body: body,
+          }).then((message) => alert(message));
+        }
+      }
+    </script>
+    
+    <script src="index.js"></script>
+  </body>
+</html>

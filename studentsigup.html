@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: url(signupbg2.png) 1%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <a href="index.html"><li>Home</li></a>
+                <a href="#about"><li>About</li></a>
+                <a href="#howtouse"><li>How to use</li></a>
+            </ul>
+            <h3>Online Attendance System</h3>
+            <ul>
+                <a href="teachersignup.html"><li>Teacher Signup</li></a>
+                <a href="studentsigup.html"><li>Student Signup</li></a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="bothlogins">
+            <div class="logins">
+                <div class="student">
+                    <header class="signupstudent">
+                        <h1>Signup</h1>
+                    </header>
+                    <main class="signupstudentbody">
+                        <form method="post" action="" name="ssignupform" id = "signup" onsubmit="return scheckEmpty()">
+                            <p>
+                                <label for="stuname">Student Name</label>
+                                <input type="text" id="stuname" placeholder="Student Name" name="Name" required>
+                            </p>
+                            <p>
+                                <label for="stuprn">Student PRN/Roll No.</label>
+                                <input type="number" id="stuprn" placeholder="Student PRN" name="PRN" required>
+                            </p>
+                            <p>
+                                <label for="stitle">Title</label>
+                                <input type="text" id="stitle" placeholder="Student" name="Title" value="Student" disabled>
+                            </p>
+                            <p>
+                                <label for="semail">Email</label>
+                                <input type="email" id="semail" placeholder="Student Email" name="Email" required>
+                            </p>
+                            <p>    
+                                <label for="spassword">Set password</label>
+                                <input type="password" id="spassword" placeholder="minimum 8 characters" name="Password" required>
+                            </p>
+                            <p id="iagree">
+                                <input type="checkbox" id="agree-to-terms" required>
+                                <label for="agree-to-terms">I agree</label>
+                            </p>
+                            <input type="submit" id="submit" value="Create Account">
+                        </form>
+                        <img src="studentstudying.png" alt="student studying" class="student-studying-img">
+                    </main>
+                    <footer class="signupstudentfooter">
+                        <p>Already have an account? <a href="studentlogin.html">Login</a></p>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
+    
+</body>
+</html>
